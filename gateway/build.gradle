@@ -33,7 +33,7 @@ configurations {
 }
 
 ext {
-	springCloudVersion = 'Finchley.BUILD-SNAPSHOT'
+	springCloudVersion = 'Finchley.M6'
 }
 
 dependencies {
