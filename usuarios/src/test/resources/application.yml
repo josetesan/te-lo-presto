@@ -1,0 +1,24 @@
+spring:
+    datasource:
+        url: jdbc:h2:mem:usuarios
+    jpa:
+        generate-ddl: true
+        hibernate:
+          ddl-auto: create-drop
+    kafka:
+        producer:
+            key-serializer: org.apache.kafka.common.serialization.LongSerializer
+            value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+            client-id: usuarios
+
+    liquibase:
+      change-log: classpath:liquibase-changelog.xml
+    cloud:
+      zookeeper:
+        connect-string: 192.168.1.36:2181
+server:
+  port: 0
+
+
+
+

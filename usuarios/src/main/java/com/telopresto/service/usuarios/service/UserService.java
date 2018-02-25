@@ -43,4 +43,8 @@ public class UserService {
         return theUsuario;
 
     }
+
+    public List<Usuario> findByPostalCode(String postalCode) {
+        return this.userRepository.findByPostalCode(postalCode);
+    }
 }
