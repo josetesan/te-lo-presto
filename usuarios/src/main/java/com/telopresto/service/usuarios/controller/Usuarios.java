@@ -45,7 +45,7 @@ public class Usuarios {
     }
 
 
-    @GetMapping("/usuarios")
+    @GetMapping("/usuariosPostales")
     List<Usuario> retrieveUsuariosByPostalCode(@RequestParam("postalCode") String postalCode) {
         return userService.findByPostalCode(postalCode);
     }

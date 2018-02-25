@@ -2,7 +2,7 @@ spring:
     datasource:
         jmx-enabled: true
         password: mysecretpassword
-        url: jdbc:postgresql://192.168.1.36/telopresto?currentSchema=usuarios
+        url: jdbc:postgresql://192.168.1.36/telopresto?currentSchema=articulos
         username: postgres
     jpa:
         generate-ddl: true
@@ -23,5 +23,7 @@ spring:
         connect-string: 192.168.1.36:2181
 server:
   port: 0
+
+
 
 
