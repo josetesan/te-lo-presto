@@ -1,8 +1,7 @@
 package com.telopresto.service.usuarios.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
-import lombok.Value;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
@@ -10,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.time.LocalDate;
 
 
 @Data
@@ -21,9 +21,10 @@ public class Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String email;
+    @JsonIgnore
     private String credential;
     private String postalCode;
-    private String birthdate;
+    private LocalDate birthdate;
 
 
 }
