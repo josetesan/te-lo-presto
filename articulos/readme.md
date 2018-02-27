@@ -1,0 +1,1 @@
+See (Baeldung)[http://www.baeldung.com/spring-data-rest-relationships]
