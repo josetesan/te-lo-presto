@@ -8,10 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.List;
 
 
 @Data
@@ -26,9 +24,7 @@ public class Item implements Serializable {
     private Long userId;
     @CreatedDate
     private LocalDate createDate;
-
-    @OneToMany(mappedBy = "item")
-    private List<ItemValuation> valuations;
+    private ItemValuation valuation;
 
 
 

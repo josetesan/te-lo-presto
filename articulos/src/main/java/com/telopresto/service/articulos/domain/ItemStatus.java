@@ -5,7 +5,8 @@ public enum ItemStatus {
     NEW,
     REGULAR,
     DAMAGED,
-    BROKEN
+    BROKEN,
+    NOT_AVAILABLE
 
 
 }
