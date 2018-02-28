@@ -1,0 +1,27 @@
+spring:
+    datasource:
+        jmx-enabled: true
+        password: mysecretpassword
+        url: jdbc:postgresql://192.168.1.36/telopresto?currentSchema=prestamos
+        username: postgres
+    jpa:
+        generate-ddl: true
+        hibernate:
+          ddl-auto: create-drop
+    kafka:
+#        bootstrap-servers: 192.168.1.36:9092
+        producer:
+            key-serializer: org.apache.kafka.common.serialization.LongSerializer
+            value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#            value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+            client-id: usuarios
+
+    liquibase:
+      change-log: classpath:liquibase-changelog.xml
+    cloud:
+      zookeeper:
+        connect-string: 192.168.1.36:2181
+server:
+  port: 0
+
+
