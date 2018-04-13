@@ -8,3 +8,7 @@
 - cloud-contract to verify api tests
 - zuul to perform as api gateway
 
+Check :
+ 
+ [ ] [Rest Docs](https://spring.io/guides/gs/testing-restdocs)
+ 
