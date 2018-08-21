@@ -1,15 +1,15 @@
 buildscript {
     ext {
-        springBootVersion = '2.0.3.RELEASE'
+        springBootVersion = '2.1.0.M2'
     }
     repositories {
-//        maven { url "https://repo.spring.io/milestone" }
+        maven { url "https://repo.spring.io/milestone" }
         mavenCentral()
         jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("org.asciidoctor:asciidoctor-gradle-plugin:1.5.7")
+        classpath("org.asciidoctor:asciidoctor-gradle-plugin:1.5.8")
     }
 }
 
@@ -17,7 +17,7 @@ buildscript {
 apply plugin: 'org.asciidoctor.convert'
 
 ext {
-	springCloudVersion = 'Finchley.RELEASE'
+	springCloudVersion = 'Finchley.SR1'
 }
 
 allprojects {
