@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.1.4.RELEASE'
+        springBootVersion = '2.2.0.M2'
     }
     repositories {
         maven { url "https://repo.spring.io/milestone" }
@@ -9,7 +9,6 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("org.asciidoctor:asciidoctor-gradle-plugin:1.5.9.2")
     }
 }
 
@@ -18,10 +17,8 @@ plugins {
 }
 
 
-apply plugin: 'org.asciidoctor.convert'
-
 ext {
-	springCloudVersion = 'Greenwich.RELEASE'
+	springCloudVersion = 'Greenwich.SR1'
 }
 
 
@@ -32,16 +29,11 @@ lombok {
 
 allprojects {
 
+
+
     repositories {
         maven { url "https://repo.spring.io/milestone" }
         mavenCentral()
-    }
-
-
-    asciidoctor {
-        sourceDir 'src/main/asciidoc'
-        attributes \
-      'snippets': file('target/snippets')
     }
 
 

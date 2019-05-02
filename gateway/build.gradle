@@ -1,17 +1,9 @@
-
-plugins {
-    id 'org.asciidoctor.convert'  apply false
-}
-
-
-
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.telopresto.service'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
 
 
 configurations {
