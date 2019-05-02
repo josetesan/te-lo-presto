@@ -27,6 +27,8 @@ lombok {
 	sha256 = ""
 }
 
+sourceCompatibility = 11
+
 allprojects {
 
 
