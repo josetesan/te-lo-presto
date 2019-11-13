@@ -1,9 +1,11 @@
 spring:
+    profiles: local
     datasource:
-        jmx-enabled: true
-        password: mysecretpassword
+      password: mysecretpassword
         url: jdbc:postgresql://192.168.1.36/telopresto?currentSchema=articulos
         username: postgres
+      tomcat:
+        jmx-enabled: true
     jpa:
         generate-ddl: true
         hibernate:
@@ -24,6 +26,33 @@ spring:
 server:
   port: 0
 
+---
+spring:
+  profiles: kubernetes
+  datasource:
+    password: mysecretpassword
+      url: jdbc:postgresql://postgres/telopresto?currentSchema=articulos
+      username: postgres
+    tomcat:
+      jmx-enabled: true
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+  kafka:
+    bootstrap-servers: kafka:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.LongSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      #            value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+      client-id: usuarios
+  liquibase:
+    change-log: classpath:liquibase-changelog.xml
+  cloud:
+    zookeeper:
+      connect-string: zookeper:2181
+server:
+  port: 0
 
 
 

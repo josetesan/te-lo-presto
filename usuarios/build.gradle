@@ -22,7 +22,7 @@ dependencies {
 	compile('org.springframework.cloud:spring-cloud-starter-zookeeper-discovery')
 //	compile('org.springframework.cloud:spring-cloud-stream')
 //	compile('org.springframework.cloud:spring-cloud-stream-binder-kafka')
-	compile('org.springframework.kafka:spring-kafka:2.1.8.RELEASE')
+	compile('org.springframework.kafka:spring-kafka')
 	runtime('org.postgresql:postgresql')
 	implementation('org.projectlombok:lombok')
 	annotationProcessor('org.projectlombok:lombok') 
