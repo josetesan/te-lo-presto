@@ -2,8 +2,8 @@ spring:
     profiles: local
     datasource:
       password: mysecretpassword
-        url: jdbc:postgresql://192.168.1.36/telopresto?currentSchema=articulos
-        username: postgres
+      url: jdbc:postgresql://localhost/telopresto?currentSchema=articulos
+      username: postgres
       tomcat:
         jmx-enabled: true
     jpa:
@@ -31,8 +31,8 @@ spring:
   profiles: kubernetes
   datasource:
     password: mysecretpassword
-      url: jdbc:postgresql://postgres/telopresto?currentSchema=articulos
-      username: postgres
+    url: jdbc:postgresql://postgres/telopresto?currentSchema=articulos
+    username: postgres
     tomcat:
       jmx-enabled: true
   jpa:

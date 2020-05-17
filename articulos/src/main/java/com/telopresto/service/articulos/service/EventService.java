@@ -8,18 +8,19 @@ import org.springframework.stereotype.Service;
 @Service
 public class EventService {
 
-    private KafkaTemplate kafkaTemplate;
+    private final KafkaTemplate<Long,Item> kafkaTemplate;
 
     private static final String TOPIC_USER_CREATE = "createItem";
     private static final String TOPIC_USER_MODIFY = "modifyItem";
 
     @Autowired
-    public EventService(KafkaTemplate kafkaTemplate) {
+    public EventService(KafkaTemplate<Long,Item> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
 
     public void createItem(final Item item) {
+
         this.kafkaTemplate.send(TOPIC_USER_CREATE, item.getId(), item);
     }
 
